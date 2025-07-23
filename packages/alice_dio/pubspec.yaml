@@ -11,12 +11,18 @@ topics:
   - alice
 
 environment:
-  sdk: '>=3.4.1 <4.0.0'
+  sdk: ">=3.4.1 <4.0.0"
   flutter: ">=3.3.0"
 
 dependencies:
-  alice: ^1.0.0-dev.12
-  dio: ^5.4.3+1
+  alice:
+    # path: ../alice
+    git:
+      url: https://github.com/skeyboy/alice.git
+      ref: feat/1.0.0-dev12
+      commit: 20e5c4e1c34da301eddbe13ea552d7d68ab5eda3
+      path: packages/alice
+  dio: ^5.8.0+1
   flutter:
     sdk: flutter
 

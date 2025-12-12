@@ -54,13 +54,12 @@ class _AliceCallDetailsPageState extends State<AliceCallDetailsPage>
                   appBar: AppBar(
                     bottom: TabBar(
                       indicatorColor: AliceTheme.lightRed,
-                      tabs:
-                          AliceCallDetailsTabItem.values.map((item) {
-                            return Tab(
-                              icon: _getTabIcon(item: item),
-                              text: _getTabName(item: item),
-                            );
-                          }).toList(),
+                      tabs: AliceCallDetailsTabItem.values.map((item) {
+                        return Tab(
+                          icon: _getTabIcon(item: item),
+                          text: _getTabName(item: item),
+                        );
+                      }).toList(),
                     ),
                     title: Text(
                       '${context.i18n(AliceTranslationKey.alice)} -'
@@ -77,16 +76,16 @@ class _AliceCallDetailsPageState extends State<AliceCallDetailsPage>
                   ),
                   floatingActionButton:
                       widget.core.configuration.showShareButton
-                          ? FloatingActionButton(
-                            backgroundColor: AliceTheme.lightRed,
-                            key: const Key('share_key'),
-                            onPressed: _shareCall,
-                            child: const Icon(
-                              Icons.share,
-                              color: AliceTheme.white,
-                            ),
-                          )
-                          : null,
+                      ? FloatingActionButton(
+                          backgroundColor: AliceTheme.lightRed,
+                          key: const Key('share_key'),
+                          onPressed: _shareCall,
+                          child: const Icon(
+                            Icons.share,
+                            color: AliceTheme.white,
+                          ),
+                        )
+                      : null,
                 ),
               );
             }

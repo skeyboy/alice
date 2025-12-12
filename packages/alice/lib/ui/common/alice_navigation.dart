@@ -9,7 +9,10 @@ import 'package:flutter/material.dart';
 class AliceNavigation {
   /// Navigates to calls list page.
   static Future<void> navigateToCallsList({required AliceCore core}) {
-    return _navigateToPage(core: core, child: AliceCallsListPage(core: core));
+    return _navigateToPage(
+      core: core,
+      child: AliceCallsListPage(core: core),
+    );
   }
 
   /// Navigates to call details page.

@@ -54,7 +54,7 @@ class AliceSortDialog extends StatelessWidget {
                         });
                       },
                       activeTrackColor: Colors.grey,
-                      activeColor: Colors.white,
+                      activeThumbColor: Colors.white,
                     ),
                     Text(context.i18n(AliceTranslationKey.sortDialogAscending)),
                   ],

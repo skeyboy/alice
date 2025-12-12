@@ -6,10 +6,12 @@ homepage: https://github.com/jhomlala/alice
 publish_to: none
 
 environment:
-  sdk: ^3.7.0
+  sdk: ">=3.10.0 <4.0.0"
+  flutter: ">=3.38.1"
 
 dependencies:
-  alice: ^1.0.0
+  alice: 
+    path: ../alice
   test: ^1.25.15
   mocktail: ^1.0.4
 

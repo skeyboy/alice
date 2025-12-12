@@ -11,13 +11,14 @@ topics:
   - objectbox
 
 environment:
-  sdk: ">=3.7.0 <4.0.0"
-  flutter: ">=3.29.0"
+  sdk: ">=3.10.0 <4.0.0"
+  flutter: ">=3.38.1"
 
 dependencies:
   flutter:
     sdk: flutter
-  alice: ^1.0.0
+  alice: 
+    path: ../alice
   json_annotation: ^4.9.0
   meta: ^1.16.0
   objectbox: ^4.3.0

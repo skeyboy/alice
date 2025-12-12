@@ -11,11 +11,12 @@ topics:
   - interceptor
 
 environment:
-  sdk: ">=3.7.0 <4.0.0"
-  flutter: ">=3.29.0"
+  sdk: ">=3.10.0 <4.0.0"
+  flutter: ">=3.38.1"
 
 dependencies:
-  alice: ^1.0.0
+  alice:
+    path: ../alice
   chopper: ^8.2.0
   http: ^1.4.0
   uuid: ^4.5.1
@@ -25,7 +26,8 @@ dependencies:
 dev_dependencies:
   flutter_lints: ^5.0.0
   test: ^1.25.15
-  alice_test: ^1.0.1
+  alice_test: 
+    path: ../alice_test
   mocktail: ^1.0.4
   build_runner: ^2.5.4
   chopper_generator: ^8.2.0

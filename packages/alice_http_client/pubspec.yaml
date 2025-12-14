@@ -14,7 +14,8 @@ environment:
   flutter: ">=3.38.1"
 
 dependencies:
-  alice: ^1.0.0
+  alice:
+    path: ../alice
 
 dev_dependencies:
   flutter_lints: ^5.0.0

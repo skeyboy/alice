@@ -31,7 +31,9 @@ class AliceSortDialog extends StatelessWidget {
                   RadioListTile<AliceCallsListSortOption>(
                     title: Text(_getName(context: context, option: sortOption)),
                     value: sortOption,
+                    // ignore: deprecated_member_use
                     groupValue: currentSortOption,
+                    // ignore: deprecated_member_use
                     onChanged: (AliceCallsListSortOption? value) {
                       if (value != null) {
                         setState(() {
@@ -54,7 +56,7 @@ class AliceSortDialog extends StatelessWidget {
                         });
                       },
                       activeTrackColor: Colors.grey,
-                      activeColor: Colors.white,
+                      activeThumbColor: Colors.white,
                     ),
                     Text(context.i18n(AliceTranslationKey.sortDialogAscending)),
                   ],

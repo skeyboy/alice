@@ -86,39 +86,36 @@ class _AliceCallsListPageState extends State<AliceCallsListPage>
             icon: const Icon(Icons.arrow_back),
             onPressed: _onBackPressed,
           ),
-          title:
-              _searchEnabled
-                  ? _SearchTextField(
-                    textEditingController: _queryTextEditingController,
-                    onChanged: _updateSearchQuery,
-                  )
-                  : Text(context.i18n(AliceTranslationKey.alice)),
-          actions:
-              isLoggerTab
-                  ? <Widget>[
-                    IconButton(
-                      icon: const Icon(Icons.terminal),
-                      onPressed: _onLogsChangePressed,
-                    ),
-                    IconButton(
-                      icon: const Icon(Icons.delete),
-                      onPressed: _onClearLogsPressed,
-                    ),
-                  ]
-                  : <Widget>[
-                    IconButton(
-                      icon: const Icon(Icons.search),
-                      onPressed: _onSearchPressed,
-                    ),
-                    _ContextMenuButton(onMenuItemSelected: _onMenuItemSelected),
-                  ],
+          title: _searchEnabled
+              ? _SearchTextField(
+                  textEditingController: _queryTextEditingController,
+                  onChanged: _updateSearchQuery,
+                )
+              : Text(context.i18n(AliceTranslationKey.alice)),
+          actions: isLoggerTab
+              ? <Widget>[
+                  IconButton(
+                    icon: const Icon(Icons.terminal),
+                    onPressed: _onLogsChangePressed,
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.delete),
+                    onPressed: _onClearLogsPressed,
+                  ),
+                ]
+              : <Widget>[
+                  IconButton(
+                    icon: const Icon(Icons.search),
+                    onPressed: _onSearchPressed,
+                  ),
+                  _ContextMenuButton(onMenuItemSelected: _onMenuItemSelected),
+                ],
           bottom: TabBar(
             controller: _tabController,
             indicatorColor: AliceTheme.lightRed,
-            tabs:
-                AliceCallsListTabItem.values.map((item) {
-                  return Tab(text: _getTabName(item: item));
-                }).toList(),
+            tabs: AliceCallsListTabItem.values.map((item) {
+              return Tab(text: _getTabName(item: item));
+            }).toList(),
           ),
         ),
         body: TabBarView(
@@ -138,10 +135,9 @@ class _AliceCallsListPageState extends State<AliceCallsListPage>
             ),
           ],
         ),
-        floatingActionButton:
-            isLoggerTab
-                ? _LoggerFloatingActionButtons(scrollLogsList: _scrollLogsList)
-                : const SizedBox(),
+        floatingActionButton: isLoggerTab
+            ? _LoggerFloatingActionButtons(scrollLogsList: _scrollLogsList)
+            : const SizedBox(),
       ),
     );
   }
@@ -257,13 +253,11 @@ class _AliceCallsListPageState extends State<AliceCallsListPage>
         description: context
             .i18n(AliceTranslationKey.saveSuccessDescription)
             .replaceAll("[path]", result.path!),
-        secondButtonTitle:
-            OperatingSystem.isAndroid
-                ? context.i18n(AliceTranslationKey.saveSuccessView)
-                : null,
-        secondButtonAction:
-            () =>
-                OperatingSystem.isAndroid ? OpenFilex.open(result.path!) : null,
+        secondButtonTitle: OperatingSystem.isAndroid
+            ? context.i18n(AliceTranslationKey.saveSuccessView)
+            : null,
+        secondButtonAction: () =>
+            OperatingSystem.isAndroid ? OpenFilex.open(result.path!) : null,
       );
     } else {
       final [String title, String description] = switch (result.error) {
@@ -306,11 +300,10 @@ class _AliceCallsListPageState extends State<AliceCallsListPage>
   Future<void> _onSortPressed() async {
     AliceSortDialogResult? result = await showDialog<AliceSortDialogResult>(
       context: context,
-      builder:
-          (_) => AliceSortDialog(
-            sortOption: _sortOption,
-            sortAscending: _sortAscending,
-          ),
+      builder: (_) => AliceSortDialog(
+        sortOption: _sortOption,
+        sortAscending: _sortAscending,
+      ),
     );
     if (result != null) {
       setState(() {
@@ -383,21 +376,20 @@ class _ContextMenuButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return PopupMenuButton<AliceCallDetailsMenuItemType>(
       onSelected: onMenuItemSelected,
-      itemBuilder:
-          (BuildContext context) => [
-            for (final AliceCallDetailsMenuItemType item
-                in AliceCallDetailsMenuItemType.values)
-              PopupMenuItem<AliceCallDetailsMenuItemType>(
-                value: item,
-                child: Row(
-                  children: [
-                    Icon(_getIcon(itemType: item), color: AliceTheme.lightRed),
-                    const Padding(padding: EdgeInsets.only(left: 10)),
-                    Text(_getTitle(context: context, itemType: item)),
-                  ],
-                ),
-              ),
-          ],
+      itemBuilder: (BuildContext context) => [
+        for (final AliceCallDetailsMenuItemType item
+            in AliceCallDetailsMenuItemType.values)
+          PopupMenuItem<AliceCallDetailsMenuItemType>(
+            value: item,
+            child: Row(
+              children: [
+                Icon(_getIcon(itemType: item), color: AliceTheme.lightRed),
+                const Padding(padding: EdgeInsets.only(left: 10)),
+                Text(_getTitle(context: context, itemType: item)),
+              ],
+            ),
+          ),
+      ],
     );
   }
 

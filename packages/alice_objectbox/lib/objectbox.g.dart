@@ -323,12 +323,11 @@ obx_int.ModelDefinition getObjectBoxModel() {
   final bindings = <Type, obx_int.EntityDefinition>{
     CachedAliceHttpCall: obx_int.EntityDefinition<CachedAliceHttpCall>(
       model: _entities[0],
-      toOneRelations:
-          (CachedAliceHttpCall object) => [
-            object.requestRel,
-            object.responseRel,
-            object.errorRel,
-          ],
+      toOneRelations: (CachedAliceHttpCall object) => [
+        object.requestRel,
+        object.responseRel,
+        object.errorRel,
+      ],
       toManyRelations: (CachedAliceHttpCall object) => {},
       getId: (CachedAliceHttpCall object) => object.objectId,
       setId: (CachedAliceHttpCall object, int id) {
@@ -456,12 +455,12 @@ obx_int.ModelDefinition getObjectBoxModel() {
         object.objectId = id;
       },
       objectToFB: (CachedAliceHttpError object, fb.Builder fbb) {
-        final dbErrorOffset =
-            object.dbError == null ? null : fbb.writeString(object.dbError!);
-        final dbStackTraceOffset =
-            object.dbStackTrace == null
-                ? null
-                : fbb.writeString(object.dbStackTrace!);
+        final dbErrorOffset = object.dbError == null
+            ? null
+            : fbb.writeString(object.dbError!);
+        final dbStackTraceOffset = object.dbStackTrace == null
+            ? null
+            : fbb.writeString(object.dbStackTrace!);
         fbb.startTable(4);
         fbb.addInt64(0, object.objectId);
         fbb.addOffset(1, dbErrorOffset);
@@ -478,14 +477,13 @@ obx_int.ModelDefinition getObjectBoxModel() {
           4,
           0,
         );
-        final object =
-            CachedAliceHttpError(objectId: objectIdParam)
-              ..dbError = const fb.StringReader(
-                asciiOptimization: true,
-              ).vTableGetNullable(buffer, rootOffset, 6)
-              ..dbStackTrace = const fb.StringReader(
-                asciiOptimization: true,
-              ).vTableGetNullable(buffer, rootOffset, 8);
+        final object = CachedAliceHttpError(objectId: objectIdParam)
+          ..dbError = const fb.StringReader(
+            asciiOptimization: true,
+          ).vTableGetNullable(buffer, rootOffset, 6)
+          ..dbStackTrace = const fb.StringReader(
+            asciiOptimization: true,
+          ).vTableGetNullable(buffer, rootOffset, 8);
 
         return object;
       },
@@ -499,35 +497,33 @@ obx_int.ModelDefinition getObjectBoxModel() {
         object.objectId = id;
       },
       objectToFB: (CachedAliceHttpRequest object, fb.Builder fbb) {
-        final contentTypeOffset =
-            object.contentType == null
-                ? null
-                : fbb.writeString(object.contentType!);
+        final contentTypeOffset = object.contentType == null
+            ? null
+            : fbb.writeString(object.contentType!);
         final dbHeadersOffset = fbb.writeString(object.dbHeaders);
-        final dbBodyOffset =
-            object.dbBody == null ? null : fbb.writeString(object.dbBody!);
+        final dbBodyOffset = object.dbBody == null
+            ? null
+            : fbb.writeString(object.dbBody!);
         final dbCookiesOffset = fbb.writeList(
           object.dbCookies.map(fbb.writeString).toList(growable: false),
         );
         final dbQueryParametersOffset = fbb.writeString(
           object.dbQueryParameters,
         );
-        final dbFormDataFilesOffset =
-            object.dbFormDataFiles == null
-                ? null
-                : fbb.writeList(
-                  object.dbFormDataFiles!
-                      .map(fbb.writeString)
-                      .toList(growable: false),
-                );
-        final dbFormDataFieldsOffset =
-            object.dbFormDataFields == null
-                ? null
-                : fbb.writeList(
-                  object.dbFormDataFields!
-                      .map(fbb.writeString)
-                      .toList(growable: false),
-                );
+        final dbFormDataFilesOffset = object.dbFormDataFiles == null
+            ? null
+            : fbb.writeList(
+                object.dbFormDataFiles!
+                    .map(fbb.writeString)
+                    .toList(growable: false),
+              );
+        final dbFormDataFieldsOffset = object.dbFormDataFields == null
+            ? null
+            : fbb.writeList(
+                object.dbFormDataFields!
+                    .map(fbb.writeString)
+                    .toList(growable: false),
+              );
         fbb.startTable(11);
         fbb.addInt64(0, object.objectId);
         fbb.addInt64(1, object.size);
@@ -605,12 +601,12 @@ obx_int.ModelDefinition getObjectBoxModel() {
         object.objectId = id;
       },
       objectToFB: (CachedAliceHttpResponse object, fb.Builder fbb) {
-        final dbBodyOffset =
-            object.dbBody == null ? null : fbb.writeString(object.dbBody!);
-        final dbHeadersOffset =
-            object.dbHeaders == null
-                ? null
-                : fbb.writeString(object.dbHeaders!);
+        final dbBodyOffset = object.dbBody == null
+            ? null
+            : fbb.writeString(object.dbBody!);
+        final dbHeadersOffset = object.dbHeaders == null
+            ? null
+            : fbb.writeString(object.dbHeaders!);
         fbb.startTable(7);
         fbb.addInt64(0, object.objectId);
         fbb.addInt64(1, object.status);

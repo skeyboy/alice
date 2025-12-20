@@ -18,16 +18,15 @@ class AliceLogsScreen extends StatelessWidget {
   final bool isAndroidRawLogsEnabled;
 
   @override
-  Widget build(BuildContext context) =>
-      aliceLogger != null
-          ? isAndroidRawLogsEnabled
-              ? AliceRawLogListWidget(
+  Widget build(BuildContext context) => aliceLogger != null
+      ? isAndroidRawLogsEnabled
+            ? AliceRawLogListWidget(
                 scrollController: scrollController,
                 getRawLogs: aliceLogger?.getAndroidRawLogs(),
               )
-              : AliceLogListWidget(
+            : AliceLogListWidget(
                 logsStream: aliceLogger?.logsStream,
                 scrollController: scrollController,
               )
-          : const AliceEmptyLogsWidget();
+      : const AliceEmptyLogsWidget();
 }
